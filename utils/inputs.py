@@ -7,7 +7,7 @@ def ask_for_input(message: str, default):
     Returns:
         Value of the input or the default
     """
-    result = input(message + " > ")
+    result = input(f"{message} > ")
     if result == "":
         result = default
     return result
@@ -27,7 +27,4 @@ def yes_or_no(message, default) -> bool:
         while res.lower() not in ("yes", "no"):
             print("[*] Please enter 'yes' or 'no' > ")
             res = input(message)
-        if res == "no":
-            return False
-        else:
-            return True
+        return res != "no"
